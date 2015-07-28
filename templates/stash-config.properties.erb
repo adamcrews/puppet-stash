@@ -11,3 +11,6 @@ jdbc.driver=<%= scope.lookupvar('stash::dbdriver') %>
 jdbc.url=<%= scope.lookupvar('stash::dburl') %>
 jdbc.user=<%= scope.lookupvar('stash::dbuser') %>
 jdbc.password=<%= scope.lookupvar('stash::dbpassword') %>
+<% if scope.lookupvar('stash::auth_crowd_sso') -%>
+plugin.auth-crowd.sso.enabled=<%= scope.lookupvar('stash::auth_crowd_sso') %>
+<% end -%>

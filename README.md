@@ -182,6 +182,7 @@ stash::proxy:
   proxyPort:  '443'
 stash::staging_or_deploy: 'deploy'
 stash::stash_stop: '/usr/sbin crm resource stop stash'
+stash::auth_crowd_sso: true
 ```
 
 ##Reference
@@ -281,6 +282,8 @@ Enable the repoforge yum repository by default for RHEL as stash requires a newe
 By default we will upgrade git to a supported version if it is already installed and the repoforge repository was not enabled. Default: true
 #####`$staging_or_deploy`
 Choose whether to use nanliu-staging, or mkrakowitzer-deploy. Defaults to 'staging' to use nanliu-staging as it is puppetlabs approved. Alternative option is 'deploy' to use mkrakowitzer-deploy.
+#####`$auth_crowd_sso`
+Enable the plugin.auth-crowd.sso.enabled option in the stash-config.properties file.
 
 ####Backup parameters####
 #####`backup_ensure`

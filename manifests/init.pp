@@ -47,6 +47,9 @@ class stash(
   # Misc Settings
   $downloadURL  = 'http://www.atlassian.com/software/stash/downloads/binary/',
 
+  # If enabled, we will manage the crowd sso plugin
+  $auth_crowd_sso = false,
+
   # Backup Settings
   $backup_ensure       = 'present',
   $backupclientURL     = 'https://maven.atlassian.com/content/repositories/atlassian-public/com/atlassian/stash/backup/stash-backup-distribution/',

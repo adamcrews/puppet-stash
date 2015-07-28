@@ -66,6 +66,17 @@ describe 'stash::config' do
               .with_content(/setup\.sysadmin\.password=stash/)
               .with_content(/setup\.sysadmin\.displayName=Stash Admin/)
               .with_content(/setup\.sysadmin\.emailAddress=/)
+              .without_content(/plugin\.auth-crowd\.sso\.enabled/)
+          end
+        end
+
+        context 'auth_crowd_sso => true' do
+          let(:params) {{
+            :auth_crowd_sso => true,
+          }}
+          it do
+            should contain_file('/home/stash/shared/stash-config.properties')
+              .with_content(/plugin\.auth-crowd\.sso\.enabled=true/)
           end
         end
 
